@@ -2,7 +2,13 @@ const btnRock = document.querySelector("#rock");
 const btnPaper = document.querySelector("#paper");
 const btnScissors = document.querySelector("#scissors");
 const resultDiv = document.querySelector(".rpsResults");
-let resultText = document.querySelector("#resultText");
+const resultText = document.querySelector("#resultText");
+const playerScoreText = document.querySelector("#playerScoreText");
+const computerScoreText = document.querySelector("#computerScoreText");
+let playerScore = 0;
+let compScore = 0;
+let roundCounter = 0;
+
 
 const getComputerChoice = function(){
     let choice = ["rock","paper","scissors"];
@@ -10,11 +16,22 @@ const getComputerChoice = function(){
     return choice[Math.floor(Math.random()*choice.length)];
 }
 
+
 function playRound(playerInput, computerInput){
     computerInput = getComputerChoice();
     let playerInputLowerCase = playerInput.toLowerCase();
     let roundResult = 0;
     let roundRes = 0; //0 lose, 1 win, 2 tie
+
+    if((roundCounter >= 5) && (playerScore > compScore)){
+        alert("You win!")
+    }
+    if((roundCounter >= 5) && (playerScore < compScore)){
+        alert("You lose...")
+    }
+    if((roundCounter >= 5) && (playerScore == compScore)){
+        alert("It's a tie!")
+    }
 
     switch (playerInputLowerCase){
         case 'rock':
@@ -23,16 +40,23 @@ function playRound(playerInput, computerInput){
                 roundResult = console.log("It's a tie! Rock ties with rock.");
                 resultText.textContent = "It's a tie! Rock ties with rock.";
                 roundRes = 2;
+                roundCounter++;
             }
             else if(computerInput == "paper"){
                 roundResult = console.log("You lose! Paper beats rock.");
                 resultText.textContent = "You lose! Paper beats rock.";
                 roundRes = 0;
+                roundCounter++;
+                compScore++;
+                computerScoreText.textContent = compScore;
             }
             else{
                 roundResult = console.log("You win! Rock beats scissors.");
                 resultText.textContent = "You win! Rock beats scissors.";
                 roundRes = 1;
+                roundCounter++;
+                playerScore++;
+                playerScoreText.textContent = playerScore;
             }
             
             break;
@@ -43,16 +67,23 @@ function playRound(playerInput, computerInput){
                 roundResult = console.log("You win! Paper beats rock.");
                 resultText.textContent = "You win! Paper beats rock.";
                 roundRes = 1;
+                roundCounter++;
+                playerScore++;
+                playerScoreText.textContent = playerScore;
             }
             else if(computerInput == "paper"){
                 roundResult = console.log("It's a tie! Paper ties with paper.");
                 resultText.textContent = "It's a tie! Paper ties with paper.";
                 roundRes = 2;
+                roundCounter++;
             }
             else{
                 roundResult = console.log("You lose! Scissors beats paper.");
                 resultText.textContent = "You lose! Scissors beats paper.";
                 roundRes = 0;
+                roundCounter++;
+                compScore++;
+                computerScoreText.textContent = compScore;
             }
             
             break;
@@ -63,16 +94,23 @@ function playRound(playerInput, computerInput){
                 roundResult = console.log("You lose! Rock beats scissors.");
                 resultText.textContent = "You lose! Rock beats scissors.";
                 roundRes = 0;
+                roundCounter++;
+                compScore++;
+                computerScoreText.textContent = compScore;
             }
             else if(computerInput == "paper"){
                 roundResult = console.log("You win! Scissors beats paper.");
                 resultText.textContent = "You win! Scissors beats paper.";
                 roundRes = 1;
+                roundCounter++;
+                playerScore++;
+                playerScoreText.textContent = playerScore;
             }
             else{
                 roundResult = console.log("It's a tie! Scissors ties with scissors.");
                 resultText.textContent = "It's a tie! Scissors ties with scissors.";
                 roundRes = 2;
+                roundCounter++;
             }
                     
             break;
