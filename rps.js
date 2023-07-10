@@ -1,6 +1,8 @@
-const btnRock = document.querySelector("#rock")
-const btnPaper = document.querySelector("#paper")
-const btnScissors = document.querySelector("#scissors")
+const btnRock = document.querySelector("#rock");
+const btnPaper = document.querySelector("#paper");
+const btnScissors = document.querySelector("#scissors");
+const resultDiv = document.querySelector(".rpsResults");
+let resultText = document.querySelector("#resultText");
 
 const getComputerChoice = function(){
     let choice = ["rock","paper","scissors"];
@@ -19,14 +21,17 @@ function playRound(playerInput, computerInput){
         case 'rocks':
             if(computerInput == "rock"){
                 roundResult = console.log("It's a tie! Rock ties with rock.");
+                resultText.textContent = "It's a tie! Rock ties with rock.";
                 roundRes = 2;
             }
             else if(computerInput == "paper"){
                 roundResult = console.log("You lose! Paper beats rock.");
+                resultText.textContent = "You lose! Paper beats rock.";
                 roundRes = 0;
             }
             else{
                 roundResult = console.log("You win! Rock beats scissors.");
+                resultText.textContent = "You win! Rock beats scissors.";
                 roundRes = 1;
             }
             
@@ -36,14 +41,17 @@ function playRound(playerInput, computerInput){
         case 'papers':
             if(computerInput == "rock"){
                 roundResult = console.log("You win! Paper beats rock.");
+                resultText.textContent = "You win! Paper beats rock.";
                 roundRes = 1;
             }
             else if(computerInput == "paper"){
                 roundResult = console.log("It's a tie! Paper ties with paper.");
+                resultText.textContent = "It's a tie! Paper ties with paper.";
                 roundRes = 2;
             }
             else{
                 roundResult = console.log("You lose! Scissors beats paper.");
+                resultText.textContent = "You lose! Scissors beats paper.";
                 roundRes = 0;
             }
             
@@ -53,14 +61,17 @@ function playRound(playerInput, computerInput){
         case 'scissor':
             if(computerInput == "rock"){
                 roundResult = console.log("You lose! Rock beats scissors.");
+                resultText.textContent = "You lose! Rock beats scissors.";
                 roundRes = 0;
             }
             else if(computerInput == "paper"){
                 roundResult = console.log("You win! Scissors beats paper.");
+                resultText.textContent = "You win! Scissors beats paper.";
                 roundRes = 1;
             }
             else{
                 roundResult = console.log("It's a tie! Scissors ties with scissors.");
+                resultText.textContent = "It's a tie! Scissors ties with scissors.";
                 roundRes = 2;
             }
                     
