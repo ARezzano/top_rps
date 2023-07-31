@@ -24,13 +24,16 @@ function playRound(playerInput, computerInput){
     let roundRes = 0; //0 lose, 1 win, 2 tie
 
     if((roundCounter >= 5) && (playerScore > compScore)){
-        alert("You win!")
+        alert("You win!");
+        location.reload();
     }
     if((roundCounter >= 5) && (playerScore < compScore)){
-        alert("You lose...")
+        alert("You lose...");
+        location.reload();
     }
     if((roundCounter >= 5) && (playerScore == compScore)){
-        alert("It's a tie!")
+        alert("It's a tie!");
+        location.reload();
     }
 
     switch (playerInputLowerCase){
