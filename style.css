@@ -1,5 +1,8 @@
 body{
+    display: flex;
     margin: 0px;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .headerClass{
@@ -35,7 +38,10 @@ button{
 }
 
 .scoreContainer{
-    background-color: rgb(46, 41, 128);
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(42, 43, 99);
+    flex: 1;
 }
 
 .rpsResults{
@@ -47,6 +53,20 @@ button{
 }
 
 #resultText{
-    color:rgb(219, 112, 219);
+    color:rgb(243, 108, 243);
     margin-left: 10px;
+}
+
+.runningScore{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: azure;
+    font-size: 20px;
+}
+
+#playerScoreText, #computerScoreText{
+    color:rgb(243, 108, 243);
+    font-size: 30px;
 }
