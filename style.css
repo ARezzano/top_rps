@@ -16,3 +16,20 @@ body{
     background-color: rgb(64, 57, 160);
     justify-content:center;
 }
+
+button{
+    padding: 50px;
+    border-radius: 10px;
+    border-color: rgb(78, 32, 32);
+    background-color: rgb(184, 62, 62);
+    font-size: 20px;
+    color:rgb(233, 233, 214);
+}
+
+#rock{
+    margin-right: 20px;
+}
+
+#scissors{
+    margin-left: 20px;
+}
