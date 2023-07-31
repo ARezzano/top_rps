@@ -4,10 +4,10 @@ body{
 
 .headerClass{
     display: flex;
-    background-color:rgb(87, 89, 230);
+    background-color:rgb(42, 43, 99);
     justify-content: center;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color:rgb(223, 223, 174);
+    color:rgb(223, 196, 174);
 }
 
 .rpsButtons{
@@ -23,7 +23,7 @@ button{
     border-color: rgb(78, 32, 32);
     background-color: rgb(184, 62, 62);
     font-size: 20px;
-    color:rgb(233, 233, 214);
+    color:rgb(231, 212, 212);
 }
 
 #rock{
@@ -32,4 +32,21 @@ button{
 
 #scissors{
     margin-left: 20px;
+}
+
+.scoreContainer{
+    background-color: rgb(46, 41, 128);
+}
+
+.rpsResults{
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: center;
+    align-items: center;
+    color:rgb(223, 196, 174);
+}
+
+#resultText{
+    color:rgb(219, 112, 219);
+    margin-left: 10px;
 }
